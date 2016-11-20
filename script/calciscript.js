@@ -18,12 +18,12 @@ var digit='';
 			values=values+value;
 			query.innerHTML=values;
 		}
-		if (value!='+' && value!='-' && value!='=' && value!='x' && value!='÷' && value!='C')
+		if (value!='+' && value!='-' && value!='=' && value!='x' && value!='/' && value!='C')
 		{
 			//making the number such as 54,2 etc 
 			digit=digit+value;
 		}
-		else if (value=='+' || value=='-' || value=='x' || value=='÷')
+		else if (value=='+' || value=='-' || value=='x' || value=='/')
 		{
 			//pushing in array digits
 			digits.push(digit);
@@ -48,7 +48,7 @@ var digit='';
 				answer=product(parseInt(digits[0]),parseInt(digits[1]));
 				console.log(answer);
 			}
-			else if (operator=='÷')
+			else if (operator=='/')
 			{
 				answer=divide(parseInt(digits[0]),parseInt(digits[1]));
 				console.log(answer);
