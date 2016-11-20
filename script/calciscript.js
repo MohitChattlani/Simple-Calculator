@@ -1,4 +1,4 @@
-var digit='';
+	var digit='';
 	var values='';
 	var digits=[];
 	var operator='';
@@ -13,44 +13,51 @@ var digit='';
 		{
 			emptybar();
 		}
-		if (value!='=' && value!='C')
-		{
-			values=values+value;
-			query.innerHTML=values;
-		}
 		if (value!='+' && value!='-' && value!='=' && value!='x' && value!='/' && value!='C')
 		{
 			//making the number such as 54,2 etc 
 			digit=digit+value;
 		}
-		else if (value=='+' || value=='-' || value=='x' || value=='/')
+		if (value=='+' || value=='-' || value=='x' || value=='/')
 		{
 			//pushing in array digits
-			digits.push(digit);
-			operator=value;
-			digit='';
+			if (operator=='')
+			{
+				digits.push(digit);
+				operator=value;
+				digit='';
+			}
+			else
+			{
+				value='';
+			}
 		}
-		else if (value=='=')
+		if (value!='=' && value!='C')
+		{
+			values=values+value;
+			query.innerHTML=values;
+		}
+		if (value=='=')
 		{
 			digits.push(digit);
 			if (operator=='+')
 			{
-				answer=add(parseInt(digits[0]),parseInt(digits[1]));
+				answer=add(parseFloat(digits[0]),parseFloat(digits[1]));
 				console.log(answer);
 			}
 			else if (operator=='-')
 			{
-				answer=subtract(parseInt(digits[0]),parseInt(digits[1]));
+				answer=subtract(parseFloat(digits[0]),parseFloat(digits[1]));
 				console.log(answer);
 			}
 			else if (operator=='x')
 			{
-				answer=product(parseInt(digits[0]),parseInt(digits[1]));
+				answer=product(parseFloat(digits[0]),parseFloat(digits[1]));
 				console.log(answer);
 			}
 			else if (operator=='/')
 			{
-				answer=divide(parseInt(digits[0]),parseInt(digits[1]));
+				answer=divide(parseFloat(digits[0]),parseFloat(digits[1]));
 				console.log(answer);
 			}
 			//converting digit into answer and empty the operator so that they can be reassigned
