@@ -43,26 +43,32 @@
 			if (operator=='+')
 			{
 				answer=add(parseFloat(digits[0]),parseFloat(digits[1]));
+				ans.innerHTML='='+answer;
+				digit=answer;
 				console.log(answer);
 			}
 			else if (operator=='-')
 			{
 				answer=subtract(parseFloat(digits[0]),parseFloat(digits[1]));
+				ans.innerHTML='='+answer;
+				digit=answer;
 				console.log(answer);
 			}
 			else if (operator=='x')
 			{
 				answer=product(parseFloat(digits[0]),parseFloat(digits[1]));
+				ans.innerHTML='='+answer;
+				digit=answer;
 				console.log(answer);
 			}
 			else if (operator=='/')
 			{
 				answer=divide(parseFloat(digits[0]),parseFloat(digits[1]));
+				ans.innerHTML='='+answer;
+				digit=answer;
 				console.log(answer);
 			}
 			//converting digit into answer and empty the operator so that they can be reassigned
-			ans.innerHTML='='+answer;
-			digit=answer;
 			operator='';
 			digits=[];
 		}
