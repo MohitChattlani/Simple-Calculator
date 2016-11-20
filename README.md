@@ -1,7 +1,8 @@
 # Simple-Calculator
 A simple Calculator that lets you add,subtract,divide and multiply.
 
-To run my application you simply need to clone the project and run the html file.
+To run my application you simply need to clone the project and run the html file.Its working fine in chrome but for Internet Explorer 
+and Mozilla you might need to allow all the scripts to run. 
 
 The application is made using html,css and the programming of the calculator is done using javascript .
 Feel free to peek into it and any kind of contribution as well as issues are welcome.
