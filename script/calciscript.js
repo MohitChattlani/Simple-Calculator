@@ -16,7 +16,14 @@
 		if (value!='+' && value!='-' && value!='=' && value!='x' && value!='/' && value!='C')
 		{
 			//making the number such as 542 etc 
-			digit=digit+value;
+			if (digit!=answer)
+			{
+				digit=digit+value;
+			}
+			else
+			{
+				value='';
+			}
 		}
 		if (value=='+' || value=='-' || value=='x' || value=='/')
 		{
