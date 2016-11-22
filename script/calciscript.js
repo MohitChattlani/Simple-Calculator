@@ -47,7 +47,7 @@
 		if (value!='=' && value!='C')
 		{
 			values=values+value;
-			query.innerHTML=values;
+			query.innerHTML=values+' ';
 		}
 		if (value=='=')
 		{
@@ -111,5 +111,5 @@
 		digits=[];
 		operator='';
 		query.innerHTML='';
-		ans.innerHTML="Answer:";
+		ans.innerHTML='';
 	}
