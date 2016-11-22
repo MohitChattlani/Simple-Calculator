@@ -18,19 +18,38 @@ body
 	background-color: #1e1e15;
 	color: white;
 }
+h1
+{
+	font-family: garamond;
+	font-weight: bolder;
+	font-size: 50px;
+	color: #009999;
+}
 #ans
 {
-	font-weight: bold;
+	font-weight: normal;
 	font-size: 40px;
 	font-family: sans-serif;
 }
 #query
 {
-	font-weight: bold;
+	font-weight: normal;
 	font-size: 40px;
 	font-family: sans-serif;
 }
 #abt
 {
-	font-family: verdana;
+	font-family: Comic Sans MS;
+	font-size: 20px;
+	color: #009999;
+}
+.link
+{
+	font-family: Comic Sans MS;
+	color: #ff4d4d;
+	text-decoration: none;
+}
+.link:hover
+{
+	font-size: 20px;
 }
