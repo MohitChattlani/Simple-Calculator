@@ -4,6 +4,8 @@ A simple Calculator that lets you add,subtract,divide and multiply.
 To run my application you simply need to clone the project and run the html file.Its working fine in chrome but for Internet Explorer 
 and Mozilla you might need to allow all the scripts to run. 
 
+![calculator project](https://cloud.githubusercontent.com/assets/19841485/20541618/0c302aea-b124-11e6-90dd-8a2672f3b7f7.JPG)
+
 The application is made using html,css and the programming of the calculator is done using javascript .
 Feel free to peek into it and any kind of contribution as well as issues are welcome.
 
