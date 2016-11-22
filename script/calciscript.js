@@ -15,21 +15,33 @@
 		}
 		if (value!='+' && value!='-' && value!='=' && value!='x' && value!='/' && value!='C')
 		{
-			//making the number such as 54,2 etc 
+			//making the number such as 542 etc 
 			digit=digit+value;
 		}
 		if (value=='+' || value=='-' || value=='x' || value=='/')
 		{
 			//pushing in array digits
-			if (operator=='')
+			if (values=='' && (value=='+' || value=='-'))
 			{
-				digits.push(digit);
-				operator=value;
-				digit='';
+				digit=digit+value;
+			}
+			else if (values=='' && (value=='x' || value=='/' )) 
+			{
+				value='';
 			}
 			else
 			{
-				value='';
+				if (operator=='')
+				{
+					digits.push(digit);
+					operator=value;
+					digit='';
+				}
+				//if operator is already there
+				else
+				{
+					value='';
+				}
 			}
 		}
 		if (value!='=' && value!='C')
@@ -39,38 +51,41 @@
 		}
 		if (value=='=')
 		{
-			digits.push(digit);
-			if (operator=='+')
+			if (digit!='')
 			{
-				answer=add(parseFloat(digits[0]),parseFloat(digits[1]));
-				ans.innerHTML='='+answer;
-				digit=answer;
-				console.log(answer);
+				digits.push(digit);
+				if (operator=='+')
+				{
+					answer=add(parseFloat(digits[0]),parseFloat(digits[1]));
+					ans.innerHTML='='+answer;
+					digit=answer;
+					console.log(answer);
+				}
+				else if (operator=='-')
+				{
+					answer=subtract(parseFloat(digits[0]),parseFloat(digits[1]));
+					ans.innerHTML='='+answer;
+					digit=answer;
+					console.log(answer);
+				}
+				else if (operator=='x')
+				{
+					answer=product(parseFloat(digits[0]),parseFloat(digits[1]));
+					ans.innerHTML='='+answer;
+					digit=answer;
+					console.log(answer);
+				}
+				else if (operator=='/')
+				{
+					answer=divide(parseFloat(digits[0]),parseFloat(digits[1]));
+					ans.innerHTML='='+answer;
+					digit=answer;
+					console.log(answer);
+				}
+				//converting digit into answer and empty the operator so that they can be reassigned
+				operator='';
+				digits=[];
 			}
-			else if (operator=='-')
-			{
-				answer=subtract(parseFloat(digits[0]),parseFloat(digits[1]));
-				ans.innerHTML='='+answer;
-				digit=answer;
-				console.log(answer);
-			}
-			else if (operator=='x')
-			{
-				answer=product(parseFloat(digits[0]),parseFloat(digits[1]));
-				ans.innerHTML='='+answer;
-				digit=answer;
-				console.log(answer);
-			}
-			else if (operator=='/')
-			{
-				answer=divide(parseFloat(digits[0]),parseFloat(digits[1]));
-				ans.innerHTML='='+answer;
-				digit=answer;
-				console.log(answer);
-			}
-			//converting digit into answer and empty the operator so that they can be reassigned
-			operator='';
-			digits=[];
 		}
 	}
 	function add(a,b)
