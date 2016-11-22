@@ -64,13 +64,15 @@
 				if (operator=='+')
 				{
 					answer=add(parseFloat(digits[0]),parseFloat(digits[1]));
-					ans.innerHTML='='+answer;
+					answer=answer.toFixed(2);  //for approx to 2decimal places
+ 					ans.innerHTML='='+answer;
 					digit=answer;
 					console.log(answer);
 				}
 				else if (operator=='-')
 				{
 					answer=subtract(parseFloat(digits[0]),parseFloat(digits[1]));
+					answer=answer.toFixed(2);
 					ans.innerHTML='='+answer;
 					digit=answer;
 					console.log(answer);
@@ -78,6 +80,7 @@
 				else if (operator=='x')
 				{
 					answer=product(parseFloat(digits[0]),parseFloat(digits[1]));
+					answer=answer.toFixed(2);
 					ans.innerHTML='='+answer;
 					digit=answer;
 					console.log(answer);
@@ -85,6 +88,7 @@
 				else if (operator=='/')
 				{
 					answer=divide(parseFloat(digits[0]),parseFloat(digits[1]));
+					answer=answer.toFixed(2);
 					ans.innerHTML='='+answer;
 					digit=answer;
 					console.log(answer);
