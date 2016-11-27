@@ -1,7 +1,7 @@
 # Simple-Calculator
 
-<a href="https://twitter.com/chattlanimohit"><img src="https://img.shields.io/badge/twitter-%40Chattlanimohit-blue.svg" alt="twitter"/></a>
 <a href="https://github.com/MohitChattlani/Simple-Calculator/blob/master/LICENSE"><img src="https://img.shields.io/badge/License-MIT-red.svg" alt="license"/></a>
+<a href="https://twitter.com/chattlanimohit"><img src="https://img.shields.io/badge/twitter-%40Chattlanimohit-blue.svg" alt="twitter"/></a>
 
 A simple Calculator for general purposes.
 
