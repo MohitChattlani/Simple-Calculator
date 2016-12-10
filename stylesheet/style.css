@@ -18,7 +18,16 @@ body
 	background-color: #1e1e15;
 	color: white;
 }
-h1
+.buttons.operator
+{
+	background-color: #80ffaa;
+}
+.buttons.operator:hover
+{
+	background-color: #194d33;
+	color: white;
+}
+#heading
 {
 	font-family: garamond;
 	font-weight: bolder;
