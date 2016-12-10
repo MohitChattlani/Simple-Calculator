@@ -28,7 +28,7 @@ Its useful for simple Calculations.
 To run my application you simply need to clone the project and run the html file.
 
 ## Screenshot
-![calculator project](https://cloud.githubusercontent.com/assets/19841485/20541618/0c302aea-b124-11e6-90dd-8a2672f3b7f7.JPG)
+![calcscreen](https://cloud.githubusercontent.com/assets/19841485/21074304/ac4ee00c-bf1b-11e6-9e4f-a834162d418f.JPG)
 
 Issues
 ==========
