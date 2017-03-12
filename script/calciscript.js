@@ -8,7 +8,7 @@
 	function button(event)
 	{
 		var button=event.srcElement;
-		var value=button.innerHTML;
+		var value=button.value;
 		if (value=='C')
 		{
 			emptybar();
