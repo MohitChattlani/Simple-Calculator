@@ -61,60 +61,27 @@
 			if (digit!='')
 			{
 				digits.push(digit);
-				if (operator=='+')
+				if (operator=='x')
 				{
-					answer=add(parseFloat(digits[0]),parseFloat(digits[1]));
-					answer=answer.toFixed(2);  //for approx to 2decimal places
+					operator='*';
+				}
+					var answe=digits[0]+operator+digits[1];
+					var t=String(answe);
+					var ru=eval(t);
+					//for approx to 2decimal places
+					answer=parseFloat(ru.toFixed(2));
+					  
  					ans.innerHTML='='+answer;
 					digit=answer;
+
 					console.log(answer);
-				}
-				else if (operator=='-')
-				{
-					answer=subtract(parseFloat(digits[0]),parseFloat(digits[1]));
-					answer=answer.toFixed(2);
-					ans.innerHTML='='+answer;
-					digit=answer;
-					console.log(answer);
-				}
-				else if (operator=='x')
-				{
-					answer=product(parseFloat(digits[0]),parseFloat(digits[1]));
-					answer=answer.toFixed(2);
-					ans.innerHTML='='+answer;
-					digit=answer;
-					console.log(answer);
-				}
-				else if (operator=='/')
-				{
-					answer=divide(parseFloat(digits[0]),parseFloat(digits[1]));
-					answer=answer.toFixed(2);
-					ans.innerHTML='='+answer;
-					digit=answer;
-					console.log(answer);
-				}
-				//converting digit into answer and empty the operator so that they can be reassigned
+				
 				operator='';
 				digits=[];
 			}
 		}
 	}
-	function add(a,b)
-	{
-		return a+b;
-	}
-	function subtract(a,b)
-	{
-		return a-b;
-	}
-	function product(a,b)
-	{
-		return a*b;
-	}
-	function divide(a,b)
-	{
-		return a/b;
-	}
+	
 	function emptybar()
 	{
 		digit='';
