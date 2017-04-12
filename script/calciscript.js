@@ -67,13 +67,11 @@
 				}
 					var answe=digits[0]+operator+digits[1];
 					var t=String(answe);
-					var ru=eval(t);
-					//for approx to 2decimal places
-					answer=parseFloat(ru.toFixed(2));
-					  
+					var ru=eval(t);   //eval function evaluates the string expression given as argument to it
+					answer=parseFloat(ru.toFixed(2)); //for approx to 2decimal places					  
  					ans.innerHTML='='+answer;
+					//converting digit into answer and empty the operator so that they can be reassigned
 					digit=answer;
-
 					console.log(answer);
 				
 				operator='';
