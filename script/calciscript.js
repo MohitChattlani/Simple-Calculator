@@ -5,15 +5,21 @@
 	var answer;
 	var ans=document.getElementById('ans');
 	var query=document.getElementById('query');
+	
 	function button(event)
 	{
 		var button=event.srcElement;
-		var value=button.value;
+		value=button.value;
 		if (value=='C')
 		{
 			emptybar();
 		}
-		if (value!='+' && value!='-' && value!='=' && value!='x' && value!='/' && value!='C')
+		doMath(value);
+	}
+	
+	function doMath(value)
+	{
+		if (value!='+' && value!='-' && value!='=' && value!='x' && value!='/' && value!='C' && value!='*')
 		{
 			//making the number such as 542 etc 
 			if (digit!=answer)
@@ -25,14 +31,14 @@
 				value='';
 			}
 		}
-		if (value=='+' || value=='-' || value=='x' || value=='/')
+		if (value=='+' || value=='-' || value=='x' || value=='/' || value=='*')
 		{
 			//pushing in array digits
 			if (values=='' && (value=='+' || value=='-'))
 			{
 				digit=digit+value;
 			}
-			else if (values=='' && (value=='x' || value=='/' )) 
+			else if (values=='' && (value=='x' || value=='/' || value=='*')) 
 			{
 				value='';
 			}
@@ -61,6 +67,7 @@
 			if (digit!='')
 			{
 				digits.push(digit);
+			}
 				if (operator=='x')
 				{
 					operator='*';
@@ -77,8 +84,8 @@
 				operator='';
 				digits=[];
 			}
-		}
 	}
+	
 	
 	function emptybar()
 	{
@@ -89,3 +96,26 @@
 		query.innerHTML='';
 		ans.innerHTML='';
 	}
+
+
+$(document).keypress(function(e) {
+		key = e.which;
+		if ((key >= 48 && key <= 57) || (key >= 96 && key <= 105)){ 
+			value=key-48;
+		}
+		if(key>=42 && key<=47){
+			value=String.fromCharCode(key);
+		}
+		if(key==13){
+		//enter
+		value='=';
+		}
+		doMath(value);
+	});
+
+$(document).keyup(function(e){
+		if(e.which==27){
+		//escape key
+			emptybar();
+		}
+})
