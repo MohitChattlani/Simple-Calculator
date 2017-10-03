@@ -100,7 +100,7 @@
 
 $(document).keypress(function(e) {
 		key = e.which;
-		if ((key >= 48 && key <= 57) || (key >= 96 && key <= 105)){ 
+		if (key >= 48 && key <= 57){ 
 			value=key-48;
 		}
 		if(key>=42 && key<=47){
