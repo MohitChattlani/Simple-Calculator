@@ -16,10 +16,18 @@
 		}
 		doMath(value);
 	}
-	
+	function invalidButton(value)
+	{
+		value=(int)value;
+		if (value>57 || value <48)
+		{
+			return true;
+		}
+		return false;
+	}
 	function doMath(value)
 	{
-		if (value!='+' && value!='-' && value!='=' && value!='x' && value!='/' && value!='C' && value!='*')
+		if (value!='+' && value!='-' && value!='=' && value!='x' && value!='/' && value!='C' && value!='*' &&  invalidButton(value))
 		{
 			//making the number such as 542 etc 
 			if (digit!=answer)
