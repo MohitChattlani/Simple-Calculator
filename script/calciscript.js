@@ -12,11 +12,25 @@
 	{
 		var button=event.srcElement;
 		value=button.value;
+		console.log("hello")
+		console.log(value)
+		console.log(decimalValue)
 		if (value=='C')
 		{
 			emptybar();
 		}
-		doMath(value);
+		else if (value == '.' && !decimalValue)
+		{
+			decimalValue = true;
+			console.log("inside")	
+			doMath(value);
+		}
+		else if(value != '.')
+		{
+			doMath(value);
+			decimalValue = false;
+
+		}
 	}
 	
 	function doMath(value)
