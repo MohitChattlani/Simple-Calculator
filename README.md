@@ -44,7 +44,7 @@ Any kind of contributions are welcome.
 2. **Clone** the project to your own machine.
 3. **Commit** changes to **development** branch.
 4. **Push** your work back up to your fork.
-5. Submit a **Pull request** so that i can review your changes
+5. Submit a **Pull request** so that I can review your changes.
 
 ##License
 
