@@ -4,11 +4,8 @@ body
 }
 .buttons
 {
-	width: 90px;
-	padding: 30px;
 	font-weight: bold;
 	font-family: sans-serif;
-	font-size: 40px;
 	border-style: none;
 	background-color: #d6d6c2;
 	margin-right: 4px;
@@ -51,6 +48,7 @@ body
 	font-family: Comic Sans MS;
 	font-size: 20px;
 	color: #009999;
+	padding-top: 18px;
 }
 .link
 {
@@ -62,3 +60,75 @@ body
 {
 	font-size: 20px;
 }
+
+/* Mobile first queries */
+@media (min-width: 320px) {
+	#heading {
+		font-size: 39px;
+	}
+
+	.buttons {
+		width: 46px;
+		font-size: 23px;
+	}
+	#abt {
+		padding-top: 145px;
+	}
+}
+@media (min-width: 375px) {
+	.buttons {
+		width: 49px;
+		font-size: 26px;
+	}
+}
+/* Larger than mobile */
+@media (min-width: 425px) {
+	.buttons{
+		width: 57px;
+		font-size: 31px;
+	}
+	#abt {
+		padding-top: 110px;
+	}
+}
+/* Larger than phablet */
+@media (min-width: 550px) {
+	.buttons{
+		width: 69px;
+		font-size: 40px;
+	}
+	#abt {
+		padding-top: 50px;
+	}
+}
+@media (min-width: 668px) {
+	.buttons {
+		width: 82px;
+		font-size: 46px;
+	}
+	#abt {
+		padding-top: 20px;
+	}
+}
+/* Larger than tablet */
+@media (min-width: 768px) {
+	.buttons{
+	width: 93px;
+	font-size: 55px;
+	}
+	#abt {
+		padding-top: 10px;
+	}
+}
+/* Larger than desktop */
+@media (min-width: 1000px) {
+	.buttons{
+		width: 118px;
+		font-size: 69px;
+	}
+}
+
+/* Larger than Desktop HD */
+@media (min-width: 1200px) {
+}
+
