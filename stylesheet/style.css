@@ -15,12 +15,23 @@ body
 	background-color: #d6d6c2;
 	margin-right: 4px;
 }
+.buttons-xs
+{
+	width: 14vw;
+	padding: 2vw;
+	font-weight: bold;
+	font-family: sans-serif;
+	font-size: 20px;
+	border-style: none;
+	background-color: #d6d6c2;
+	margin-right: 4px;
+}
 .buttons:hover
 {
 	background-color: #1e1e15;
 	color: white;
 }
-.buttons.operator
+.buttons.operator,.buttons-xs.operator
 {
 	background-color: #80ffaa;
 }
@@ -63,4 +74,7 @@ body
 .link:hover
 {
 	font-size: 20px;
+}
+.dotted{
+	border: 1px dotted black;
 }
