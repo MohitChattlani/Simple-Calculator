@@ -4,8 +4,10 @@ body
 }
 .buttons
 {
-	width: 90px;
-	padding: 30px;
+	width: 14%;
+	max-width: 90px;
+	height:80px;
+	text-align: center;
 	font-weight: bold;
 	font-family: sans-serif;
 	font-size: 40px;
