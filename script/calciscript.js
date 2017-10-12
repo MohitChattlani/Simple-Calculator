@@ -5,7 +5,9 @@
 	var answer;
 	var ans=document.getElementById('ans');
 	var query=document.getElementById('query');
-	
+	var decimalValue = false
+	var firstNumber = false
+	var secondNumber = false
 	function button(event)
 	{
 		var button=event.srcElement;
@@ -14,7 +16,17 @@
 		{
 			emptybar();
 		}
-		doMath(value);
+		else if (value == '.' && !decimalValue)
+		{
+			decimalValue = true;
+			doMath(value);
+		}
+		else if(value != '.')
+		{
+			doMath(value);
+			decimalValue = false;
+
+		}
 	}
 	
 	function doMath(value)
@@ -89,6 +101,9 @@
 	
 	function emptybar()
 	{
+		decimalValue = false;
+		firstNumber = false;
+		secondNumber = false;
 		digit='';
 		values='';
 		digits=[];
@@ -100,17 +115,42 @@
 
 $(document).keypress(function(e) {
 		key = e.which;
-		if (key >= 48 && key <= 57){ 
+		if(key >= 48 && key <= 57)
+		{
 			value=key-48;
+			doMath(value);
 		}
-		if(key>=42 && key<=47){
+		else if(key==42 || key==47 || key==43 || key == 45){
 			value=String.fromCharCode(key);
+			decimalValue = false;
+			if(firstNumber)
+			{
+				secondNumber = true
+			}
+			else
+			{
+				firstNumber = true
+			}
+			doMath(value);
 		}
-		if(key==13){
-		//enter
-		value='=';
+		else if(key == 46 && !decimalValue)
+		{
+			value=String.fromCharCode(key);
+			decimalValue = true;
+			doMath(value);
 		}
-		doMath(value);
+		else if(key==61){
+			if(firstNumber && !secondNumber)
+			{
+				doMath(0);
+			}
+			value='=';
+			doMath(value);
+		}
+		else if(key == 99 || key == 67)
+		{
+			emptybar()
+		}
 	});
 
 $(document).keyup(function(e){
