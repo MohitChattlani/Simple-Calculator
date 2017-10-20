@@ -9,17 +9,36 @@
 	function button(event)
 	{
 		var button=event.srcElement;
-		value=button.value;
-		if (value=='C')
+		value=button.innerText;
+
+		// Standardise × (&times;), ÷ (&divide;) and x
+		if (value == '×' || value.toLowerCase() == 'x')
 		{
-			emptybar();
+			value = '*';
+		} 
+		else if (value == '÷')
+		{
+			value = '/';
 		}
-		doMath(value);
+		
+		switch(value)
+		{
+			// Empty the bar if C is pressed
+			case 'C': emptybar(); break;
+
+			// Currently (, ) and ⌫ (&#9003;) are disabled
+			case '(':
+			case ')':
+			case '⌫': break;
+
+			// All other values enter the doMath function
+			default: doMath(value); break;
+		}
 	}
 	
 	function doMath(value)
 	{
-		if (value!='+' && value!='-' && value!='=' && value!='x' && value!='/' && value!='C' && value!='*')
+		if (value!='+' && value!='-' && value!='=' && value!='*' && value!='/' && value!='C')
 		{
 			//making the number such as 542 etc 
 			if (digit!=answer)
@@ -31,14 +50,14 @@
 				value='';
 			}
 		}
-		if (value=='+' || value=='-' || value=='x' || value=='/' || value=='*')
+		if (value=='+' || value=='-' || value=='*' || value=='/')
 		{
 			//pushing in array digits
 			if (values=='' && (value=='+' || value=='-'))
 			{
 				digit=digit+value;
 			}
-			else if (values=='' && (value=='x' || value=='/' || value=='*')) 
+			else if (values=='' && (value=='/' || value=='*')) 
 			{
 				value='';
 			}
@@ -59,6 +78,11 @@
 		}
 		if (value!='=' && value!='C')
 		{
+			if (value == '*') {
+				value = '×';
+			} else if (value == '/') {
+				value = '÷';
+			}
 			values=values+value;
 			query.innerHTML=values+' ';
 		}
@@ -68,22 +92,19 @@
 			{
 				digits.push(digit);
 			}
-				if (operator=='x')
-				{
-					operator='*';
-				}
-					var answe=digits[0]+operator+digits[1];
-					var t=String(answe);
-					var ru=eval(t);   //eval function evaluates the string expression given as argument to it
-					answer=parseFloat(ru.toFixed(2)); //for approx to 2decimal places					  
- 					ans.innerHTML='='+answer;
-					//converting digit into answer and empty the operator so that they can be reassigned
-					digit=answer;
-					console.log(answer);
-				
-				operator='';
-				digits=[];
-			}
+			
+			var answe=digits[0]+operator+digits[1];
+			var t=String(answe);
+			var ru=eval(t);   //eval function evaluates the string expression given as argument to it
+			answer=parseFloat(ru.toFixed(2)); //for approx to 2decimal places					  
+			ans.innerHTML='='+answer;
+			//converting digit into answer and empty the operator so that they can be reassigned
+			digit=answer;
+			console.log(answer);
+			
+			operator='';
+			digits=[];
+		}
 	}
 	
 	
@@ -105,11 +126,17 @@ $(document).keypress(function(e) {
 		}
 		if(key>=42 && key<=47){
 			value=String.fromCharCode(key);
+			// Change x to *
+			if (value.toLowerCase() == 'x')
+			{
+				value = '*';
+			} 
 		}
 		if(key==13){
 		//enter
 		value='=';
 		}
+
 		doMath(value);
 	});
 

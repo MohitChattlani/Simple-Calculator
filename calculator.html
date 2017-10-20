@@ -13,35 +13,47 @@
 <body style="background-color:	#F0FFFF;">
 <h1 id="heading">Simple Calculator</h1>
 <div class="container">
-<div id="query"></div>
-<div id="ans"></div>
-<br>
-<div>
-	<button class="buttons" onclick="button(event);" value="1">1</button>
-	<button class="buttons" onclick="button(event);" value="2">2</button>
-	<button class="buttons" onclick="button(event);" value="3">3</button>
-	<button class="buttons operator" onclick="button(event);" value="+">+</button>
-	<button class="buttons operator" onclick="button(event);" value="-">-</button>
-	<br><br>
-	<button class="buttons" onclick="button(event);" value="4">4</button>
-	<button class="buttons" onclick="button(event);" value="5">5</button>
-	<button class="buttons" onclick="button(event);" value="6">6</button>
-	<button class="buttons operator" onclick="button(event);" value="x">x</button>
-	<button class="buttons operator" onclick="button(event);" value="/">/</button>
-	<br><br>
-	<button class="buttons" onclick="button(event);" value="7">7</button>
-	<button class="buttons" onclick="button(event);" value="8">8</button>
-	<button class="buttons" onclick="button(event);" value="9">9</button>
-	<button class="buttons operator" onclick="button(event);" value="=">=</button>
-	<button class="buttons operator" onclick="button(event);" value="C">C</button>
-	<br><br>
-	<button class="buttons" onclick="button(event);" value="0">0</button>
-	<button class="buttons" onclick="button(event);" value=".">.</button>
-</div>
-<p id="abt"> <span style="color: black;">by</span> Mohit chattlani</p>
-<script type="text/javascript" src="script/calciscript.js"></script>
-<a class="link" href="https://twitter.com/chattlanimohit">twitter.com/chattlanimohit</a>
-<p>&copy; all rights reserved</p>
+	<div id="query"></div>
+	<div id="ans"></div>
+	<div id="calculator">
+		<table>
+			<tr>
+				<td><button class="operator" onclick="button(event)">(</button></td>
+				<td><button class="operator" onclick="button(event)">)</button></td>
+				<td><button class="operator" onclick="button(event)">C</button></td>
+				<td><button class="operator" onclick="button(event)">&#9003;</button></td>
+			</tr>
+			<tr>
+				<td><button onclick="button(event)">7</button></td>
+				<td><button onclick="button(event)">8</button></td>
+				<td><button onclick="button(event)">9</button></td>
+				<td><button class="operator" onclick="button(event)">&divide;</button></td>
+			</tr>
+			<tr>
+				<td><button onclick="button(event)">4</button></td>
+				<td><button onclick="button(event)">5</button></td>
+				<td><button onclick="button(event)">6</button></td>
+				<td><button class="operator" onclick="button(event)">&times;</button></td>
+			</tr>
+			<tr>
+				<td><button onclick="button(event)">1</button></td>
+				<td><button onclick="button(event)">2</button></td>
+				<td><button onclick="button(event)">3</button></td>
+				<td><button class="operator" onclick="button(event)">-</button></td>
+			</tr>
+			<tr>
+				<td><button onclick="button(event)">0</button></td>
+				<td><button onclick="button(event)">.</button></td>
+				<td><button class="operator" onclick="button(event)">=</button></td>
+				<td><button class="operator" onclick="button(event)">+</button></td>
+			</tr>
+		</table>
+	</div>
+
+	<p id="abt"> <span style="color: black;">by</span> Mohit chattlani</p>
+	<script type="text/javascript" src="script/calciscript.js"></script>
+	<a class="link" href="https://twitter.com/chattlanimohit">twitter.com/chattlanimohit</a>
+	<p>&copy; all rights reserved</p>
 </div>
 </body>
 </html>
