@@ -6,6 +6,7 @@ body
 #calculator {
 	width: max-content;
 	margin: 2rem auto;
+	border: solid green;
 }
 
 table td {
