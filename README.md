@@ -46,7 +46,7 @@ Any kind of contributions are welcome.
 4. <a href='https://help.github.com/articles/pushing-to-a-remote/'>**Push**</a> your work back up to your fork.
 5. Submit a <a href='https://help.github.com/articles/about-pull-requests/'>**Pull request**</a> so that i can review your changes
 
-##License
+## License
 
 ```Groovy
 MIT License
